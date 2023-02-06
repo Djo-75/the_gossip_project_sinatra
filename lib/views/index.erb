@@ -5,16 +5,16 @@
   <body>
     <h1 >Mon super site de gossip, depuis le dossier views !</h1>
     <p>Bienvenue l'ami, la liste des potins arrive bientôt !</p>
-    <p>Clique <a href="http://localhost:4567/gossips/new/">ici</a> pour poster un potin</p>
-    <P> Clique <a href="http://localhost:4567/gossips/2/">ici</a> pour voir tous les potins</p>
+    <p>Clique <a href="http://localhost:4567/gossips/new/">ici</a> pour poster un potin</p>/p>
 
-    <p>Voici tous les potins :</p>
-    <% gossips.each do |gossip| %>
-      <p>
-        <%= gossip.author %><br/>
-        <%= gossip.content %><br/>
-        <a href="http://localhost:4567/gossips/gossip/">Lien vers profil</a>
-      </p>
+    <p>Voici tous les potins</p><br>
+    
+    <% gossips.each_with_index do |gossip, index| %>
+      <p>Son auteur :<%= gossip.author %></p>
+      <p>Le contenu du potin :<%= gossip.content %></p>
+      <p><% link = "http://localhost:4567/gossips/" + index.to_s %>
+      <% url = link %>
+      <a href="<%= url %>">Voici la page du potin en question</a></p>
     <% end %>
   </body>
 </html>
