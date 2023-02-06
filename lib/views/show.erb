@@ -6,11 +6,13 @@
         <h1>PAGE POTIN</h1>
 
         <p>Voici la page du potin n°<%= specific  %></p>
-        <p>Son auteur : <%= Gossip.all[specific.to_i].author%></p>
-        <p>Le contenu du potin : <%= Gossip.all[specific.to_i].content%></p>
+        <p>Son auteur : <%= index.author%></p>
+        <p>Le contenu du potin : <%= index.content %></p>
 
-
+        <p><a href="http://localhost:4567/">Lien</a> pour revenir à la page des potins</p>
 
     </body>
         
         
+</html>
+

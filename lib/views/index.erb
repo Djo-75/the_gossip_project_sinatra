@@ -6,13 +6,14 @@
     <h1 >Mon super site de gossip, depuis le dossier views !</h1>
     <p>Bienvenue l'ami, la liste des potins arrive bientôt !</p>
     <p>Clique <a href="http://localhost:4567/gossips/new/">ici</a> pour poster un potin</p>
-    <P> Clique <a href="http://localhost:4567/gossips/2/">ici</a pour voir tous les potins</p>
+    <P> Clique <a href="http://localhost:4567/gossips/2/">ici</a> pour voir tous les potins</p>
 
     <p>Voici tous les potins :</p>
     <% gossips.each do |gossip| %>
       <p>
         <%= gossip.author %><br/>
-        <%= gossip.content %>
+        <%= gossip.content %><br/>
+        <a href="http://localhost:4567/gossips/gossip/">Lien vers profil</a>
       </p>
     <% end %>
   </body>

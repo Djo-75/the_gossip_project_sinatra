@@ -4,7 +4,7 @@ require 'gossip'
 class ApplicationController < Sinatra::Base
 
   get '/' do
-    erb :index, locals: {gossips: Gossip.all}
+    erb :index, locals: {gossips: Gossip.all} # locals permet de créer une variable "gossips = Gossip.all" et de l'emmener vers le view
   end
 
   get '/gossips/new/' do
@@ -17,7 +17,9 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/gossips/:id/' do
-    erb :show, locals: {specific: params['id']}
+    Gossip.find(params['id'])
+    erb :show, locals: {specific: params['id'], index: Gossip.find(params['id'])}
+
   end
   
 end

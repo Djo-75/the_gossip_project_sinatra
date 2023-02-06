@@ -11,11 +11,11 @@ class Gossip
     end
 
     def save # méthode d'instance
-        CSV.open("./db/gossip.csv", "a+") do |csv|
-          csv << [@author, @content]
-        end
-        rescue => error
-        puts "Error while writing to the CSV file: #{error}"
+      CSV.open("./db/gossip.csv", "a+") do |csv|
+        csv << [@author, @content]
+      end
+      rescue => error
+      puts "Error while writing to the CSV file: #{error}"
     end
 
     def self.all
@@ -25,6 +25,12 @@ class Gossip
       end
       return all_gossips
     end    
+
+    def self.find(index_gossip)
+        num = index_gossip.to_i
+        gossips_db = self.all
+      return gossips_db[num]
+    end
 end
 
 # binding.pry
