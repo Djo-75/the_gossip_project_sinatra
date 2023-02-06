@@ -1,1 +1,12 @@
 FRANKIKI SINATRA
+
+Ce dossier s'appelle the_gossip_project_sinatra et contient des fichiers écrits dans le langage Ruby.
+    
+    Il contient :
+    
+    - une Gemfile
+    - des fichiers de programmation (/lib)
+    - des fichiers de tests (/spec) 
+    - ce README.md
+    
+Le programme est censé fonctionner jusqu'au 2.6 inclus ! En revanche, je ne suis pas parvenu à éditer un gossip
