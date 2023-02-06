@@ -1,4 +1,4 @@
-# require 'pry'
+require 'pry'
 require 'csv'
 
 class Gossip
@@ -31,9 +31,18 @@ class Gossip
         gossips_db = self.all
       return gossips_db[num]
     end
+
+    def update(author, content) # méthode d'instance
+      CSV.open("./db/gossip.csv", "a+") do |csv|
+        if csv[0] == self.author
+          csv << [author, content]
+        end
+      end
+      rescue => error
+      puts "Error while writing to the CSV file: #{error}"
+    end
     
 end
 
-# binding.pry
 
 # Gossip.new("José", "Josiane est nulle").save
