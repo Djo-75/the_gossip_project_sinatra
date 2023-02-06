@@ -31,6 +31,7 @@ class Gossip
         gossips_db = self.all
       return gossips_db[num]
     end
+    
 end
 
 # binding.pry
